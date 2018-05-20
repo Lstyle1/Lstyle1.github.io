@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Lstyle
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Fine Tuning CNNs (2017 CVPR)</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>这次聊的是一篇2017年cvpr的论文，主要针对卷积神经网络在标记训练集比较少的情况下，如何达到比较好的训练效果。</p>
+<p>Abstract</p>
+<p>目前卷积神经网络已经可以很广泛地应用在计算机视觉领域里了，但是对于生物医学影像方面，由于缺少ImageNet这种含有大量标记数据的数据集，而阻碍了发展，原因一方面在于这一领域对于没有这方面知识的人来说比较难标记，另一方面也比较花时间。</p>
+<p>所以就提出这样一个问题：如果把CNN应用在生物医学领域的同时尽量减少标记的工作；于是这篇文章提出了一种方法叫做：AIFT，把主动学习和迁移学习结合在了一起，用以减少标记的花销。</p>
+<p>这篇文章在三个领域进行了实验，分别是结肠镜帧分类，息肉检测，和肺栓塞（PE）检测；最终发现，实验所需的标记数据集数量可以至少减少一半。</p>
+<p>Introduction</p>
+<p>整个训练过程大致是这样的：</p>
+<p>首先把未标记的数据集扔进一个已经训练好的CNN模型来预测，根据预测值挑出其中比较重要的数据手动标记后再放到CNN中训练调整参数，然后再把剩下的数据扔到CNN里预测，继续挑出来比较“重要的”的数据进行标记，再扔进之前的CNN进行训练，就这样不断循环，直到达到某个条件就停止训练。</p>
+<ol start="2">
+<li>Related Work</li>
+</ol>
+<p>2.1. Data Augmentation</p>
+<p>接下来介绍这篇论文涵盖的一些方法。首先是数据扩充（Data Augmentation），一种通过平移，旋转，缩放，形变，加噪声等等等方法获得更多训练数据的方法。这些经过数据扩充得到的数据从相同的图片中获得，和原始数据的label相同，于是在CNN里也应该得到相近的预测值。</p>
+<p>然而通过数据扩充到的数据不可避免地会产生一些即便是人眼也会识别困难的数据，于是文章中把这种图像当作噪声来处理，只选取一部分有效的扩充数据进行计算。</p>
+<p>2.1. Transfer Learning</p>
+<p>迁移学习就是将已训练好的卷积神经网络最后的全连接层部分替换为新的逻辑层，并且只训练后添加的这部分网络层。通过这种方法训练网络可以效率更高更节省时间。</p>
+<p>2.3. Active Learning</p>
+<p>接下来介绍一下主动学习。在某些情况下，没有标签的数据相当丰富而有标签的数据相当稀少，并且人工对数据进行标记的成本又相当高昂。在这种情况下，我们可以让学习算法主动地提出要对哪些数据进行标注，之后我们要将这些数据送到专家那里让他们进行标注，再将这些数据加入到训练样本集中对算法进行训练。这一过程叫做主动学习。</p>
+<p>这篇文章中的AIFT方法和以往的将主动学习应用到深度学习的方法不同之处在于，每次循环结束得到新的标记数据后，都不需要从头开始训练网络，只是基于上一次的参数做进一步调整。</p>
+<ol start="3">
+<li>Proposed Method</li>
+</ol>
+<p>这篇文章主要提出的背景是基于生物医学领域的计算机辅助检测（CAD），一个CAD系统主要用于诊断病变并进行分类，但是分类的结果不全是准确的，比如会产生一些真阳性结果（true positive）和假阳性结果（false positive），我们的期望就是训练一个能够降低false positive同时提高true positive的分类器。同时，为了提高训练效果，往往会通过data augmentation来增大数据量，比如现在一共有n种病变：</p>
+<p>U = {C_1,C_2,…,C_n}</p>
+<p>其中任何一种病变通过data augmentation产生了m个patches，C_i = {x_i^1,x_i^2,…,x_i^m} 可以把它们理解为在原图基础上经过平移等等得到的图像，AIFT算法就是在每次循环中选出一些病变的图像进行标记。</p>
+<p>3.1. Continuous Fine -tuning</p>
+<p>一开始有标记的数据集是空的，我们直接用一个提前训练好的CNN网络（比如AlexNet）对现有的数据集进行分类，然后选出b种病变进行标记，被标记过的candidates再次被扔进网络进行训练，来调整CNN的参数，一些研究都表明通过调整得到的CNN网络比对数据从头训练得到的网络鲁棒性更高，实验表明这种基于之前的参数进行的微调比重新训练得到的CNN收敛的更快。文章作者进一步发现，如果只是把新标记过的数据不断放到CNN中进行微调参数，就需要对元参数进行很小心的调整。</p>
+<p>3.2. Active candidate selection</p>
+<p>对于主动学习，关键点在于找到一个在标记数据阶段，用来评判哪些candidate更“有价值”（worthiness）的标准（criterion）。这时候，candidate的entropy和diversity就起到了很好的指示性作用。entropy就是熵，表示了当前CNN网络对某个candidate预测的确定性。熵越高表示分类越不确定，进一步表明图像信息量越大。diversity指明了在同一个candidate中不同patches之间预测的一致性，diversity越高表示patches之间一致性越低。于是，entropy和diversity都比较高的话，我们认为它们对提升CNN性能起着比较关键的作用。</p>
+<p>3.3. Handling noisy labels via majority selection</p>
+<p>我们之前说过用data augmentation的方法来增大数据量，但是这种方法同样也存在一些问题，比如像figure1里面，有一些扩充得到的图片即便人眼也不一定能判断出是什么东西，我们把这种不好判断的图片作为噪声处理，在计算entropy和diversity的时候要避开这些噪声。采用的方法这样的，首先计算每一种病变的patches在CNN中的预测值的平均值，</p>
+<p>a_i = \frac{1}{m}\sum_{j=1}^{m}p_i^j</p>
+<p>如果a_i&gt;0.5，那么就选择前百分之\alpha的patches计算熵和多样性，否则就计算后百分之\alpha。这样的话，对每种病变通过公式3都可以得到一个\alpha m \times \alpha m的矩阵。</p>
+<p>3.4. An illustration of prediction patterns</p>
+<p>之前讲到通过data augmentation得到的一系列patches，假设某个patch x_i^j 通过目前CNN得到的预测值是p_i^j，那么可以同一种candidate内不同的patches所得到的预测模式绘制表格：</p>
+<ul>
+<li>Pattern A：patches的预测值基本都集中在0.5左右，也就是说不确定性很高，大部分主动学习的算法都比较青睐于这种类型的candidate；</li>
+<li>Pattern B：这种模式分布的特点是，对于所有patches的预测值均匀分布在0到1之间，这种模式的一致性很低。对于这种类型的candidate对于增强当前CNN表现可以起到显著的作用；</li>
+<li>Pattern C：这种的模式的预测值集中在两侧，导致了更高程度的多样性，这种类型的candidate在data augmentation阶段最有可能产生噪声数据，对于主动学习来说可能会引起不确定性；</li>
+<li>Pattern D and E：这种模式的预测值只在集中在某一端，当前CNN中对这种数据预测正确的可能性最大，所以在主动学习阶段基本不需要对这种模式的candidate进行标记；</li>
+<li>Pattern F and G：这种模式在某些patches中的确定度很高，但同时也存在着一些异常值，这种类型的candidate可以起到平滑地改善CNN的效果的作用。</li>
+</ul>
+<ol start="4">
+<li>Applications</li>
+</ol>
+<p>4.1. Colonoscopy Frame Classification</p>
+<p>结肠镜检查过程的客观质量评价对确保结肠镜检查是很重要的，如果一个结肠镜检查的视频包含了许多结肠信息量不足的图像的话，那么这个结肠镜检查就不是一个理想的诊断过程。视频中包含越多的缺少关键信息的图像，这个结肠镜检查的质量就越差。所以一种衡量结肠镜检查的手段就是通过衡量拍摄到的图像的质量来评判。从技术上讲，对结肠镜拍摄到的图像质量的评估可以转化为分类问题：判断一幅图像是informative还是non-informative。</p>
+<p>他们用来做实验的4000张图像数据来自于6个完整的结肠镜检查视频，一个已经训练好的专家系统首先对所有数据进行标记：判断是informative还是non-informative。在data augmentation阶段，会对每一帧图像提取到21张patches。</p>
+<p>首先利用AlexNet在已有数据上进行测试，可以看到在一开始IFT Random方法让神经网络表现出了不错的预测效果，然而在第一次微调后，AIFT Diversity1/4, Entropy, Entropy1/4等方法的效果很快就超过了随机方法，因为他们选取了对于调整CNN模型更重的samples进行标记，可以看到AIFT Entropy and Diversity1/4 只需要4次数据标记就可以达到IFT Random的18次数据标记，以及Learning from Scratch数据标记22次的效果。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/05/20/Fine-Tuning-CNNs-2017-CVPR/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/05/20/Fine-Tuning-CNNs-2017-CVPR/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
